@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel=stylesheet type=text/css href="
+		{{ url_for('static', filename='styles.css') }}
+		">
+	<title>Items</title>
+	</head>
+
+<body>
+
+	<div class = 'pane'>
+
+	<p><a href="{{url_for('showLogin')}}">log in  |</a>
+	<a href="{{url_for('gdisconnect')}}">log out</a></p>
+
+	<!--MESSAGE FLASHING -->
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+
+	{% for message in messages %}
+	  <p class='flashSuccess'><strong>{{message}}</strong></p>
+	  {% endfor %}
+	{% endif %}
+	{% endwith %}
+	<!--END of MESSAGE FLASHING -->
+
+	<div>
+		<h1>Items list in chosen category <br/>
+			'{{chosenCategoryTemplate.name}}':</h1><br/>
+	</div>
+
+<a href = '{{url_for(
+		'addNewItem', category_id = chosenCategoryTemplate.id
+		) }}'>Create New Item</a><br/><br/><br/>
+
+
+{% for i in itemsTemplate %}
+	<div>
+		<p><a href='{{url_for(
+				'viewDescription', category_id = chosenCategoryTemplate.id,
+				item_id=i.id
+				)}}' class='category'>{{i.name}}</a></p>
+	</div>
+
+{% endfor %}
+
+<br/><br/>
+<a href = '{{url_for('viewCategories')}}'>back to Categories list</a>
+<br/><br/><br/>
+<a href="{{url_for(
+		'viewItemsJSON', category_id=chosenCategoryTemplate.id
+		)}}" class = 'source'>View in JSON format</a>
+<br/>
+<p class = 'source'>{{Source}}</p>
+</div>
+
+</body>
+
+</html>
