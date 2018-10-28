@@ -1,0 +1,72 @@
+body {
+  background-color: #ffffff;
+}
+
+head {
+  background-color: #16112c;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #9f5696;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+rosy {
+  color: #ff33ad;
+}
+
+img {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+img:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+.img2 {
+  opacity: 1.0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  border-color: #aaaaaa;
+  color: #9f5696;
+}
+
+.creator {
+  font-size: 10px;
+  font-style: italic;
+  left: 25%;
+  color: #6faaf3;
+}
+
+.flash {
+  color: #ffbe00;
+  background: #40505a;
+}
+
+.flashSuccess {
+  color: #399621;
+  background: #40505a;
+}
+
+.flashError {
+  color: #e60a1e;
+  background: #40505a;
+}
